@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.net.URL;
 
 public class FirstTest {
@@ -40,8 +39,13 @@ public class FirstTest {
     @Test
     public void firstTest()
     {
-        WebElement element = driver.findElementByXPath("//*[contains(@text,'SKIP')]");
-        element.click();
+
+        waitForElementByXpathAndClick(
+                "//*[contains(@text,'SKIP')]",
+                "Cannot find SKIP button",
+                5
+
+        );
 
         waitForElementByXpathAndClick(
                 "//*[contains(@text,'Search Wikipedia')]",
