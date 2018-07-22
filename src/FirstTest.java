@@ -35,7 +35,7 @@ public class FirstTest {
     }
 
     @Test
-    public void firstTest() {
+    public void testCompareTitle() {
 
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'SKIP')]"),
@@ -83,11 +83,27 @@ public class FirstTest {
 
         waitForElementAndSendKeys(
                 By.xpath("//*[contains(@text,'Search…')]"),
-                "J",
+                "Java",
                 "Cannot find search input",
-                15
+                5
+
 
         );
+
+        waitForElementAndCLear(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Cannot find search field",
+                5
+        );
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "J",
+                "Cannot find search input",
+                5
+
+        );
+
 
         waitForElementAndClick(
                 By.id("org.wikipedia:id/search_close_btn"),
@@ -134,6 +150,12 @@ public class FirstTest {
         return wait.until(
                 ExpectedConditions.invisibilityOfElementLocated(by)
         );
+    }
+
+    private WebElement waitForElementAndCLear(By by, String error_message, long timeoutInSeconds) {
+        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
+        element.clear();
+        return element;
     }
 
 }
