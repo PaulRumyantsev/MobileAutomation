@@ -183,6 +183,69 @@ public class FirstTest {
                 5
         );
 
+    }
+
+    @Test
+    public void Ex3() {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'SKIP')]"),
+                "Cannot find SKIP button",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia' input",
+                5
+        );
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "Java",
+                "Cannot find search input",
+                5
+        );
+
+        waitForElementPresent(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Cannot find 'Search Wikipedia' input",
+                5
+        );
+
+        waitForElementPresent(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Island of Indonesia']"),
+                "Cannot find 'Search Wikipedia' input",
+                5
+
+        );
+
+        waitForElementPresent(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Austronesian language']"),
+                "Cannot find 'Search Wikipedia' input",
+                5
+        );
+
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_close_btn"),
+                "Cannot find X to cancel search",
+                5
+        );
+
+        WebElement title_element = waitForElementPresent(
+                By.id("org.wikipedia:id/search_empty_message"),
+                "Text 'Search and read the free encyclopedia in your language' is not present",
+                15
+
+        );
+
+        String article_title = title_element.getAttribute("text");
+        Assert.assertEquals(
+                "We see unexpected title",
+                "Search and read the free encyclopedia in your language",
+                article_title
+        );
+
+
 
     }
 
