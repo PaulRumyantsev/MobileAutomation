@@ -177,15 +177,23 @@ public class FirstTest {
                 5
         );
 
-        waitForElementPresent(
+        waitForElementPresentWithText(
                 By.xpath("//*[contains(@text,'Search…')]"),
-                "Search… not present",
+                "Text 'Search…' is not present",
                 5
         );
 
 
     }
 
+
+    private WebElement waitForElementPresentWithText(By by,String error_message, long timeoutInSeconds) {
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.withMessage(error_message + "\n");
+        return wait.until(
+                ExpectedConditions.presenceOfElementLocated(by)
+        );
+    }
 
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
