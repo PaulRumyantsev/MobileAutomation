@@ -15,30 +15,27 @@ public class FirstTest {
     private AppiumDriver driver;
 
     @Before
-    public void setUp() throws Exception
-    {
+    public void setUp() throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        capabilities.setCapability("platformName","Android");
-        capabilities.setCapability("deviceName","AndroidTestDevice");
-        capabilities.setCapability("platformVersion","7.1");
-        capabilities.setCapability("automationName","Appium");
-        capabilities.setCapability("appPackage","org.wikipedia");
-        capabilities.setCapability("appActivity",".main.MainActivity");
-        capabilities.setCapability("app","/Users/mac_user/Desktop/JavaAppiumAutomation/apks/org.wikipedia.apk");
+        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("deviceName", "AndroidTestDevice");
+        capabilities.setCapability("platformVersion", "7.1");
+        capabilities.setCapability("automationName", "Appium");
+        capabilities.setCapability("appPackage", "org.wikipedia");
+        capabilities.setCapability("appActivity", ".main.MainActivity");
+        capabilities.setCapability("app", "/Users/mac_user/Desktop/JavaAppiumAutomation/apks/org.wikipedia.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
 
     @After
-    public void tearDown()
-    {
+    public void tearDown() {
         driver.quit();
     }
 
     @Test
-    public void firstTest()
-    {
+    public void firstTest() {
 
         waitForElementByXpathAndClick(
                 "//*[contains(@text,'SKIP')]",
@@ -49,7 +46,7 @@ public class FirstTest {
 
         waitForElementByXpathAndClick(
                 "//*[contains(@text,'Search Wikipedia')]",
-                "Cannot find Search Wikipedia input",
+                "Cannot find 'Search Wikipedia' input",
                 5
         );
 
@@ -67,8 +64,46 @@ public class FirstTest {
         );
     }
 
-    private WebElement waitForElementPresentByXpath(String xpath, String error_message, long timeoutInSeconds)
-    {
+    @Test
+    public void testCancelSearch() {
+
+        waitForElementByXpathAndClick(
+                "//*[contains(@text,'SKIP')]",
+                "Cannot find SKIP button",
+                5
+
+        );
+
+        waitForElementByIdAndClick(
+                "org.wikipedia:id/search_container",
+                "Cannot find 'Search Wikipedia' input",
+                5
+
+        );
+
+        waitForElementByXpathAndSendKeys(
+                "//*[contains(@text,'Search…')]",
+                "J",
+                "Cannot find search input",
+                15
+
+        );
+
+        waitForElementByIdAndClick(
+                "org.wikipedia:id/search_close_btn",
+                "Cannot find X to cancel search",
+                5
+
+        );
+
+        waitForElementNotPresent(
+                "org.wikipedia:id/search_close_btn",
+                "X is still present on the page",
+                5
+        );
+    }
+
+    private WebElement waitForElementPresentByXpath(String xpath, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
         By by = By.xpath(xpath);
@@ -77,24 +112,44 @@ public class FirstTest {
         );
     }
 
-    private WebElement waitForElementPresentByXpath(String xpath, String error_message)
-    {
-       return waitForElementPresentByXpath(xpath, error_message, 5);
+    private WebElement waitForElementPresentByXpath(String xpath, String error_message) {
+        return waitForElementPresentByXpath(xpath, error_message, 5);
     }
 
-    private WebElement waitForElementByXpathAndClick(String xpath, String error_message, long timeoutInSeconds)
-    {
+    private WebElement waitForElementByXpathAndClick(String xpath, String error_message, long timeoutInSeconds) {
         WebElement element = waitForElementPresentByXpath(xpath, error_message, 5);
         element.click();
         return element;
 
     }
 
-    private WebElement waitForElementByXpathAndSendKeys(String xpath, String value, String error_message, long timeoutInSeconds)
-    {
+    private WebElement waitForElementByXpathAndSendKeys(String xpath, String value, String error_message, long timeoutInSeconds) {
         WebElement element = waitForElementPresentByXpath(xpath, error_message, 5);
         element.sendKeys(value);
         return element;
+    }
+
+    private WebElement waitForElementPresentById(String id, String error_message, long timeoutInSeconds) {
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.withMessage(error_message + "\n");
+        By by = By.id(id);
+        return wait.until(
+                ExpectedConditions.presenceOfElementLocated(by)
+        );
+    }
+    private WebElement waitForElementByIdAndClick(String id, String error_message, long timeoutInSeconds) {
+        WebElement element = waitForElementPresentById(id, error_message, 5);
+        element.click();
+        return element;
+
+    }
+    private boolean waitForElementNotPresent(String id, String error_message, long timeoutInSeconds) {
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.withMessage(error_message + "\n");
+        By by = By.id(id);
+        return wait.until(
+                ExpectedConditions.invisibilityOfElementLocated(by)
+        );
     }
 
 }
