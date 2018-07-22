@@ -163,6 +163,30 @@ public class FirstTest {
         );
     }
 
+    @Test
+    public void Ex2() {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'SKIP')]"),
+                "Cannot find SKIP button",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia' input",
+                5
+        );
+
+        waitForElementPresent(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "Search… not present",
+                5
+        );
+
+
+    }
+
+
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
