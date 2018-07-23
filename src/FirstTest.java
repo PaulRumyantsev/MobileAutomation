@@ -178,7 +178,7 @@ public class FirstTest {
         );
 
         waitForElementPresentWithText(
-                By.xpath("//*[contains(@text,'Search…')]"),
+                By.xpath("//*[@resource-id='org.wikipedia:id/search_cab_view']//*[@text='Search…']"),
                 "Text 'Search…' is not present",
                 5
         );
