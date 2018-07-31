@@ -273,6 +273,7 @@ public class FirstTest {
                 "Cannot find input to set name of articles folder",
                 5
         );
+
         String name_of_folder = "Learning programming";
         waitForElementAndSendKeys(
                 By.id("org.wikipedia:id/text_input"),

@@ -1,6 +1,7 @@
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidKeyCode;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -124,6 +125,187 @@ public class HomeWork {
 
     }
 
+    @Test
+    public void Ex5(){
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'SKIP')]"),
+                "Cannot find SKIP button",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia' input",
+                5
+        );
+
+        String search_line = "Java";
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                search_line,
+                "Cannot find search input",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Cannot find 'Search Wikipedia' input",
+                5
+        );
+
+        waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find article title",
+                15
+        );
+
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageView[@content-desc='More options']"),
+                "Cannot find button to open article options",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[@text='Add to reading list']"),
+                "Cannot find option to add article to reading list",
+                15
+        );
+
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/onboarding_button"),
+                "Cannot fined 'Got it tip' overlay",
+                5
+        );
+
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/create_button"),
+                "Cannot find 'Create new' layout",
+                5
+        );
+
+        waitForElementAndCLear(
+                By.id("org.wikipedia:id/text_input"),
+                "Cannot find input to set name of articles folder",
+                5
+        );
+
+        String name_of_folder = "My list";
+        waitForElementAndSendKeys(
+                By.id("org.wikipedia:id/text_input"),
+                name_of_folder,
+                "Cannot put text into article folder input",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[@text='OK']"),
+                "Cannot press OK button",
+                5
+        );
+
+        driver.navigate().back();
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia' input",
+                5
+        );
+
+        String second_search_line = "Java";
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                second_search_line,
+                "Cannot find second search input",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Island of Indonesia']"),
+                "Cannot find 'Search Wikipedia' input",
+                15
+        );
+
+        waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find second article title",
+                15
+        );
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageView[@content-desc='More options']"),
+                "Cannot find button to open article options",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[@text='Add to reading list']"),
+                "Cannot find option to add article to reading list",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.TextView[@text='My list']"),
+                "Cannot find 'My list' folder",
+                5
+        );
+
+        driver.navigate().back();
+
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id='org.wikipedia:id/fragment_main_nav_tab_layout']/android.view.ViewGroup/android.widget.FrameLayout[2]"),
+                "Cannot find 'My list' layout_button",
+                5
+        );
+
+        waitForElementPresent(
+                By.xpath("//android.widget.TextView[@text='My lists']"),
+                "Cannot find 'My lists' ",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.TextView[@text='My list']"),
+                "Cannot find 'My list' folder in My lists",
+                5
+        );
+
+        swipeElementToLeft(
+                By.xpath("//*[@text='Java (programming language)']"),
+                "Cannot fined 'Java (programming language)'"
+        );
+
+
+        waitForElementPresent(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Island of Indonesia']"),
+                "Cannot find 'Java Island of Indonesia' element",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Island of Indonesia']"),
+                "Cannot find 'Java Island of Indonesia' element for click",
+                5
+        );
+
+        WebElement title_element = waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_subtitle_text"),
+                "Cannot find article title",
+                15
+
+        );
+
+        String article_title = title_element.getAttribute("text");
+        Assert.assertEquals(
+                "We see unexpected title",
+                "Island of Indonesia",
+                article_title
+        );
+
+
+
+    }
+
     private WebElement waitForElementPresentWithText(By by, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
@@ -228,6 +410,19 @@ public class HomeWork {
     private int getAmountOfElements(By by){
         List elements = driver.findElements(by);
         return elements.size();
+    }
+
+    private void assertElementNotPresent(By by, String error_message){
+        int amount_of_elements = getAmountOfElements(by);
+        if (amount_of_elements > 0){
+            String default_message = "An element '" + by.toString() + "' supposed to be not present";
+            throw new AssertionError(default_message + " " + error_message);
+        }
+    }
+
+    private String waitForElementAndGetAttribute(By by, String attribute, String error_message, long timeoutInSeconds){
+        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
+        return element.getAttribute(attribute);
     }
 
 }
