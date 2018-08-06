@@ -1,43 +1,17 @@
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
-import org.junit.After;
+import lib.CoreTestCase;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.net.URL;
 import java.util.List;
 
-public class FirstTest {
+public class FirstTest extends CoreTestCase {
 
-    private AppiumDriver driver;
-
-    @Before
-    public void setUp() throws Exception {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("deviceName", "AndroidTestDevice");
-        capabilities.setCapability("platformVersion", "7.1");
-        capabilities.setCapability("automationName", "Appium");
-        capabilities.setCapability("appPackage", "org.wikipedia");
-        capabilities.setCapability("appActivity", ".main.MainActivity");
-        capabilities.setCapability("app", "/Users/mac_user/Desktop/JavaAppiumAutomation/apks/org.wikipedia.apk");
-
-        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-    }
-
-    @After
-    public void tearDown() {
-        driver.quit();
-    }
 
     @Test
     public void testCompareTitle() {
@@ -63,7 +37,7 @@ public class FirstTest {
         );
 
         waitForElementPresent(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                By.xpath("//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='Object-oriented programming language']"),
                 "Cannot find Object-oriented programming language topic searching by Java",
                 15
         );
@@ -147,7 +121,7 @@ public class FirstTest {
         );
 
         waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                By.xpath("//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='Object-oriented programming language']"),
                 "Cannot find 'Search Wikipedia' input",
                 5
         );
@@ -212,7 +186,7 @@ public class FirstTest {
     }
 
     @Test
-    public void saveFirstArticleToMyList(){
+    public void testFirstArticleToMyList(){
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'SKIP')]"),
                 "Cannot find SKIP button",
@@ -234,9 +208,9 @@ public class FirstTest {
         );
 
         waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                By.xpath("//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='Object-oriented programming language']"),
                 "Cannot find 'Search Wikipedia' input",
-                5
+                10
         );
 
         waitForElementPresent(
@@ -433,7 +407,7 @@ public class FirstTest {
         );
 
         waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                By.xpath("//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='Object-oriented programming language']"),
                 "Cannot find 'Object-oriented programming language' topic searching by " + search_line,
                 15
         );
@@ -499,7 +473,7 @@ public class FirstTest {
         );
 
         waitForElementPresent(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                By.xpath("//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='Object-oriented programming language']"),
                 "Cannot find 'Search Wikipedia' input",
                 5
         );
@@ -507,7 +481,7 @@ public class FirstTest {
         driver.runAppInBackground(2);
 
         waitForElementPresent(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                By.xpath("//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='Object-oriented programming language']"),
                 "Cannot find article after returning from background",
                 5
         );

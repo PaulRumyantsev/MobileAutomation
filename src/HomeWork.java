@@ -84,21 +84,21 @@ public class HomeWork {
             );
 
             waitForElementPresent(
-                    By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                    "Cannot find 'Search Wikipedia' input",
+                    By.xpath("//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='Object-oriented programming language']"),
+                    "Cannot find 'Object-oriented programming language",
                     5
             );
 
             waitForElementPresent(
-                    By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Island of Indonesia']"),
-                    "Cannot find 'Search Wikipedia' input",
+                    By.xpath("//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='Island of Indonesia']"),
+                    "Cannot find 'Island of Indonesia' input",
                     5
 
             );
 
             waitForElementPresent(
-                    By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Austronesian language']"),
-                    "Cannot find 'Search Wikipedia' input",
+                    By.xpath("//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='Austronesian language']"),
+                    "Cannot find 'Austronesian language' input",
                     5
             );
 
@@ -148,7 +148,7 @@ public class HomeWork {
         );
 
         waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                By.xpath("//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='Object-oriented programming language']"),
                 "Cannot find 'Search Wikipedia' input",
                 5
         );
@@ -221,8 +221,8 @@ public class HomeWork {
         );
 
         waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Island of Indonesia']"),
-                "Cannot find 'Search Wikipedia' input",
+                By.xpath("//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='Island of Indonesia']"),
+                "Cannot find 'Island of Indonesia' input",
                 15
         );
 
@@ -277,13 +277,13 @@ public class HomeWork {
 
 
         waitForElementPresent(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Island of Indonesia']"),
+                By.xpath("//*[@resource-id='org.wikipedia:id/reading_list_contents']//*[@text='Island of Indonesia']"),
                 "Cannot find 'Java Island of Indonesia' element",
                 5
         );
 
         waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Island of Indonesia']"),
+                By.xpath("//*[@resource-id='org.wikipedia:id/reading_list_contents']//*[@text='Island of Indonesia']"),
                 "Cannot find 'Java Island of Indonesia' element for click",
                 5
         );
@@ -305,6 +305,7 @@ public class HomeWork {
 
 
     }
+
 
     private WebElement waitForElementPresentWithText(By by, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);

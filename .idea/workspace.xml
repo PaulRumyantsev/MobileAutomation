@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2a71578-a6bc-43ea-96a6-04efc1ee4b45" name="Default" comment="">
+    <list default="true" id="b2a71578-a6bc-43ea-96a6-04efc1ee4b45" name="Default" comment="ex5">
+      <change afterPath="$PROJECT_DIR$/src/lib/CoreTestCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HomeWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomeWork.java" afterDir="false" />
@@ -25,8 +26,8 @@
       <file leaf-file-name="FirstTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2070">
-              <caret line="155" column="59" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="59" />
+            <state relative-caret-position="333">
+              <caret line="460" lean-forward="true" selection-start-line="460" selection-end-line="460" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,8 +38,20 @@
       <file leaf-file-name="HomeWork.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/HomeWork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="175" column="50" selection-start-line="175" selection-start-column="50" selection-end-line="175" selection-end-column="50" />
+            <state relative-caret-position="-90">
+              <caret line="285" column="82" selection-start-line="285" selection-start-column="82" selection-end-line="285" selection-end-column="82" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoreTestCase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,6 +79,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/lib/CoreTestCase.java" />
         <option value="$PROJECT_DIR$/src/FirstTest.java" />
         <option value="$PROJECT_DIR$/src/HomeWork.java" />
       </list>
@@ -74,7 +88,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="813" />
+    <option name="height" value="812" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -82,7 +96,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -95,10 +108,17 @@
               <item name="MobileAutomation" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MobileAutomation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MobileAutomation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
@@ -129,26 +149,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.HomeWork.Ex4">
+  <component name="RunManager" selected="JUnit.HomeWork.Ex5">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="FirstTest.testAmountOfEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="testAmountOfEmptySearch" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
     </configuration>
     <configuration name="FirstTest.testChangeScreenOrientationOnSearchResults" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
@@ -184,13 +187,13 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="FirstTest.testCompareArticleTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HomeWork.DebugXpath" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="testCompareArticleTitle" />
+      <option name="MAIN_CLASS_NAME" value="HomeWork" />
+      <option name="METHOD_NAME" value="DebugXpath" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -201,13 +204,30 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="HomeWork.Ex4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HomeWork.Ex3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="HomeWork" />
-      <option name="METHOD_NAME" value="Ex4" />
+      <option name="METHOD_NAME" value="Ex3" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="HomeWork.Ex5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HomeWork" />
+      <option name="METHOD_NAME" value="Ex5" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -257,19 +277,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.FirstTest.testAmountOfEmptySearch" />
       <item itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResults" />
       <item itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
-      <item itemvalue="JUnit.HomeWork.Ex4" />
-      <item itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
+      <item itemvalue="JUnit.HomeWork.Ex3" />
+      <item itemvalue="JUnit.HomeWork.Ex5" />
+      <item itemvalue="JUnit.HomeWork.DebugXpath" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HomeWork.Ex4" />
-        <item itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
+        <item itemvalue="JUnit.HomeWork.Ex5" />
+        <item itemvalue="JUnit.HomeWork.DebugXpath" />
+        <item itemvalue="JUnit.HomeWork.Ex3" />
         <item itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
         <item itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResults" />
-        <item itemvalue="JUnit.FirstTest.testAmountOfEmptySearch" />
       </list>
     </recent_temporary>
   </component>
@@ -438,43 +458,50 @@
       <option name="project" value="LOCAL" />
       <updated>1532893962734</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="ex5">
+      <created>1533020389262</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1533020389279</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HomeWork_Ex4 - 2018.07.30 at 23h 04m 31s.xml">
-      <configuration name="HomeWork.Ex4" configurationId="JUnit" />
+    <history-entry file="HomeWork_Ex5 - 2018.08.06 at 22h 19m 58s.xml">
+      <configuration name="HomeWork.Ex5" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testCompareArticleTitle - 2018.07.30 at 23h 07m 15s.xml">
-      <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
+    <history-entry file="HomeWork_Ex5 - 2018.08.06 at 22h 30m 45s.xml">
+      <configuration name="HomeWork.Ex5" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HomeWork_Ex4 - 2018.07.30 at 23h 12m 57s.xml">
-      <configuration name="HomeWork.Ex4" configurationId="JUnit" />
+    <history-entry file="HomeWork_Ex5 - 2018.08.06 at 22h 33m 03s.xml">
+      <configuration name="HomeWork.Ex5" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HomeWork_Ex4 - 2018.07.30 at 23h 16m 33s.xml">
-      <configuration name="HomeWork.Ex4" configurationId="JUnit" />
+    <history-entry file="HomeWork_Ex5 - 2018.08.06 at 22h 36m 12s.xml">
+      <configuration name="HomeWork.Ex5" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HomeWork_Ex4 - 2018.07.30 at 23h 18m 38s.xml">
-      <configuration name="HomeWork.Ex4" configurationId="JUnit" />
+    <history-entry file="HomeWork_Ex5 - 2018.08.06 at 22h 37m 38s.xml">
+      <configuration name="HomeWork.Ex5" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HomeWork_Ex4 - 2018.07.30 at 23h 20m 19s.xml">
-      <configuration name="HomeWork.Ex4" configurationId="JUnit" />
+    <history-entry file="HomeWork_DebugXpath - 2018.08.06 at 22h 42m 07s.xml">
+      <configuration name="HomeWork.DebugXpath" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HomeWork_Ex4 - 2018.07.30 at 23h 22m 08s.xml">
-      <configuration name="HomeWork.Ex4" configurationId="JUnit" />
+    <history-entry file="HomeWork_DebugXpath - 2018.08.06 at 22h 42m 56s.xml">
+      <configuration name="HomeWork.DebugXpath" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HomeWork_Ex4 - 2018.07.31 at 09h 53m 18s.xml">
-      <configuration name="HomeWork.Ex4" configurationId="JUnit" />
+    <history-entry file="HomeWork_DebugXpath - 2018.08.06 at 22h 43m 27s.xml">
+      <configuration name="HomeWork.DebugXpath" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HomeWork_Ex4 - 2018.07.31 at 09h 55m 06s.xml">
-      <configuration name="HomeWork.Ex4" configurationId="JUnit" />
+    <history-entry file="HomeWork_Ex5 - 2018.08.06 at 22h 46m 49s.xml">
+      <configuration name="HomeWork.Ex5" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HomeWork_Ex4 - 2018.07.31 at 09h 56m 28s.xml">
-      <configuration name="HomeWork.Ex4" configurationId="JUnit" />
+    <history-entry file="HomeWork_Ex5 - 2018.08.06 at 22h 49m 12s.xml">
+      <configuration name="HomeWork.Ex5" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="815" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="820" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -484,17 +511,17 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50858366" side_tool="true" weight="0.3250346" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4985694" visible="true" weight="0.37465182" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4985694" visible="true" weight="0.3692946" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4914163" weight="0.32458565" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49642345" weight="0.32780084" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22961374" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2353362" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39917126" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39834026" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -557,7 +584,8 @@
     <MESSAGE value="amount of not empty test + HomeWork refactor" />
     <MESSAGE value="rotation" />
     <MESSAGE value="background" />
-    <option name="LAST_COMMIT_MESSAGE" value="background" />
+    <MESSAGE value="ex5" />
+    <option name="LAST_COMMIT_MESSAGE" value="ex5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -565,16 +593,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -854,10 +872,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="155" column="59" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="59" />
+        <state relative-caret-position="333">
+          <caret line="460" lean-forward="true" selection-start-line="460" selection-end-line="460" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -866,8 +894,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HomeWork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="175" column="50" selection-start-line="175" selection-start-column="50" selection-end-line="175" selection-end-column="50" />
+        <state relative-caret-position="-90">
+          <caret line="285" column="82" selection-start-line="285" selection-start-column="82" selection-end-line="285" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
