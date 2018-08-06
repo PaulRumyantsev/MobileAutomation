@@ -149,26 +149,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.HomeWork.Ex5">
+  <component name="RunManager" selected="JUnit.HomeWork.testEx3">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="FirstTest.testChangeScreenOrientationOnSearchResults" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaAppiumAutomation" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="testChangeScreenOrientationOnSearchResults" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
     </configuration>
     <configuration name="FirstTest.testCheckSearchArticleInBackground" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaAppiumAutomation" />
@@ -238,6 +221,23 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="HomeWork.testEx3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaAppiumAutomation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HomeWork" />
+      <option name="METHOD_NAME" value="testEx3" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -277,19 +277,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResults" />
       <item itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
       <item itemvalue="JUnit.HomeWork.Ex3" />
       <item itemvalue="JUnit.HomeWork.Ex5" />
       <item itemvalue="JUnit.HomeWork.DebugXpath" />
+      <item itemvalue="JUnit.HomeWork.testEx3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HomeWork.testEx3" />
         <item itemvalue="JUnit.HomeWork.Ex5" />
         <item itemvalue="JUnit.HomeWork.DebugXpath" />
         <item itemvalue="JUnit.HomeWork.Ex3" />
         <item itemvalue="JUnit.FirstTest.testCheckSearchArticleInBackground" />
-        <item itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResults" />
       </list>
     </recent_temporary>
   </component>
