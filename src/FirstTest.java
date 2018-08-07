@@ -83,7 +83,7 @@ public class FirstTest extends CoreTestCase {
     }
 
     @Test
-    public void testFirstArticleToMyList(){
+    public void testSaveFirstArticleToMyList(){
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[contains(@text,'SKIP')]"),
                 "Cannot find SKIP button",
@@ -166,7 +166,7 @@ public class FirstTest extends CoreTestCase {
         );
 
         MainPageObject.waitForElementAndClick(
-                By.xpath("//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]"),
+                By.xpath("//*[@resource-id='org.wikipedia:id/fragment_main_nav_tab_layout']/android.view.ViewGroup/android.widget.FrameLayout[2]"),
                 "Cannot find navigation button to My list",
                 5
         );
