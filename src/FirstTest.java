@@ -1,5 +1,6 @@
 import lib.CoreTestCase;
 import lib.ui.MainPageObject;
+import lib.ui.SearchPageObject;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -19,88 +20,29 @@ public class FirstTest extends CoreTestCase {
 
 
     @Test
-    public void testCompareTitle() {
+    public void testSearch()
+    {
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
 
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text,'SKIP')]"),
-                "Cannot find SKIP button",
-                5
-
-        );
-
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-                "Cannot find 'Search Wikipedia' input",
-                5
-        );
-
-        MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text,'Search…')]"),
-                "Java",
-                "Cannot find search input",
-                5
-        );
-
-        MainPageObject.waitForElementPresent(
-                By.xpath("//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='Object-oriented programming language']"),
-                "Cannot find Object-oriented programming language topic searching by Java",
-                15
-        );
+        SearchPageObject.initSkipPage();
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Java");
+        SearchPageObject.waitForSearchResult("Object-oriented programming language");
     }
 
     @Test
-    public void testCancelSearch() {
+    public void testCancelSearch()
+    {
 
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text,'SKIP')]"),
-                "Cannot find SKIP button",
-                5
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
 
-        );
+        SearchPageObject.initSkipPage();
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("J");
+        SearchPageObject.waitForCancelButtonToAppear();
+        SearchPageObject.clickCancelSearch();
+        SearchPageObject.waitForCancelButtonToDisappear();
 
-        MainPageObject.waitForElementAndClick(
-                By.id("org.wikipedia:id/search_container"),
-                "Cannot find 'Search Wikipedia' input",
-                5
-
-        );
-
-        MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text,'Search…')]"),
-                "Java",
-                "Cannot find search input",
-                5
-
-
-        );
-
-        MainPageObject.waitForElementAndCLear(
-                By.id("org.wikipedia:id/search_src_text"),
-                "Cannot find search field",
-                5
-        );
-
-        MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text,'Search…')]"),
-                "J",
-                "Cannot find search input",
-                5
-
-        );
-
-
-        MainPageObject.waitForElementAndClick(
-                By.id("org.wikipedia:id/search_close_btn"),
-                "Cannot find X to cancel search",
-                5
-
-        );
-
-        MainPageObject.waitForElementNotPresent(
-                By.id("org.wikipedia:id/search_close_btn"),
-                "X is still present on the page",
-                5
-        );
     }
 
     @Test
