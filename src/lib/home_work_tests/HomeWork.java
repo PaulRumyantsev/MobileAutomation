@@ -1,5 +1,8 @@
+package lib.home_work_tests;
+
 import lib.CoreTestCase;
 import lib.ui.MainPageObject;
+import lib.ui.SearchPageObject;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -15,28 +18,6 @@ public class HomeWork extends CoreTestCase {
         MainPageObject = new MainPageObject(driver);
     }
 
-
-    @Test
-    public void testEx2() {
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text,'SKIP')]"),
-                "Cannot find SKIP button",
-                5
-        );
-
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
-                "Cannot find 'Search Wikipedia' input",
-                5
-        );
-
-        MainPageObject.waitForElementPresent(
-                By.xpath("//*[@resource-id='org.wikipedia:id/search_cab_view']//*[@text='Search…']"),
-                "Text 'Search…' is not present",
-                5
-        );
-
-    }
 
         @Test
         public void testEx3() {
