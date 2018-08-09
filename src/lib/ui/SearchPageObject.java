@@ -10,7 +10,10 @@ public class SearchPageObject extends MainPageObject {
             SEARCH_INIT_ELEMENT = "//*[contains(@text,'Search Wikipedia')]",
             SEARCH_INPUT = "//*[contains(@text,'Search…')]",
             SEARCH_CANCEL_BUTTON = "org.wikipedia:id/search_close_btn",
-            SEARCH_RESULT_BY_SUBSTRING_TPL = "//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='{SUBSTRING}']";
+            SEARCH_RESULT_BY_SUBSTRING_TPL = "//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='{SUBSTRING}']",
+            SEARCH_RESULT_ELEMENT = "//*[@resource-id='org.wikipedia:id/search_results_container']//*[@text='Linkin Park discography']",
+            SEARCH_EMPTY_RESULT_ELEMENT = "//*[@text='No results found']";
+
 
     public SearchPageObject(AppiumDriver driver)
     {
@@ -66,5 +69,27 @@ public class SearchPageObject extends MainPageObject {
     {
         String search_result_xpath = getResultSearchElement(substring);
         this.waitForElementAndClick(By.xpath(search_result_xpath),"Can't find and click search result with substring" + substring,10);
+    }
+
+    public int getAmmountOfFoundArticles()
+    {
+
+        this.waitForElementPresent(
+                By.xpath(SEARCH_RESULT_ELEMENT),
+                "Cannot find anything by the request ",
+                15
+        );
+        return this.getAmountOfElements(By.xpath(SEARCH_RESULT_ELEMENT));
+
+    }
+
+    public void waitForEmptyResultsLabel()
+    {
+        this.waitForElementPresent(By.xpath(SEARCH_EMPTY_RESULT_ELEMENT),"Can't find empty result element",15);
+    }
+
+    public void assertThereIsNoResultOfSearch()
+    {
+        this.assertElementNotPresent(By.xpath(SEARCH_RESULT_ELEMENT),"We supposed not to fined any results");
     }
 }
