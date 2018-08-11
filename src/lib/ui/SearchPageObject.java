@@ -12,8 +12,8 @@ public class SearchPageObject extends MainPageObject {
             SEARCH_CANCEL_BUTTON = "org.wikipedia:id/search_close_btn",
             SEARCH_RESULT_BY_SUBSTRING_TPL = "//*[@resource-id='org.wikipedia:id/search_results_list']//*[@text='{SUBSTRING}']",
             SEARCH_RESULT_ELEMENT = "//*[@resource-id='org.wikipedia:id/search_results_container']//*[@text='Linkin Park discography']",
-            SEARCH_EMPTY_RESULT_ELEMENT = "//*[@text='No results found']";
-
+            SEARCH_EMPTY_RESULT_ELEMENT = "//*[@text='No results found']",
+            SEARCH_RESULT_IS_DISAPPEAR = "org.wikipedia:id/search_empty_message";
 
     public SearchPageObject(AppiumDriver driver)
     {
@@ -68,10 +68,10 @@ public class SearchPageObject extends MainPageObject {
     public void clickByArticleWithSubstring(String substring)
     {
         String search_result_xpath = getResultSearchElement(substring);
-        this.waitForElementAndClick(By.xpath(search_result_xpath),"Can't find and click search result with substring" + substring,10);
+        this.waitForElementAndClick(By.xpath(search_result_xpath),"Can't find and click search result with substring" + substring,15);
     }
 
-    public int getAmmountOfFoundArticles()
+    public int getAmountOfFoundArticles()
     {
 
         this.waitForElementPresent(
@@ -91,5 +91,10 @@ public class SearchPageObject extends MainPageObject {
     public void assertThereIsNoResultOfSearch()
     {
         this.assertElementNotPresent(By.xpath(SEARCH_RESULT_ELEMENT),"We supposed not to fined any results");
+    }
+
+    public void waitForSearchResultIsDisappearByEmptyMessage()
+    {
+        this.waitForElementPresent(By.id(SEARCH_RESULT_IS_DISAPPEAR),"Text 'Search and read the free encyclopedia in your language' is not present",5);
     }
 }

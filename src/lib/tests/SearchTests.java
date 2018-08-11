@@ -40,7 +40,7 @@ public class SearchTests extends CoreTestCase {
         SearchPageObject.initSearchInput();
         String search_line = "Linkin Park discography";
         SearchPageObject.typeSearchLine(search_line);
-        int amount_of_search_results = SearchPageObject.getAmmountOfFoundArticles();
+        int amount_of_search_results = SearchPageObject.getAmountOfFoundArticles();
 
 
         assertTrue(
