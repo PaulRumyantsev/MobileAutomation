@@ -2,9 +2,8 @@ package lib.home_work_tests;
 
 import lib.CoreTestCase;
 import lib.ui.*;
-import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
+
 
 
 public class HomeWork extends CoreTestCase {
